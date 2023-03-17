@@ -5,11 +5,11 @@
 body{
     width: 100vw;
     height: 100vh;
-    background: rgb(2,0,36);
     background: linear-gradient(180deg, rgb(38, 38, 43) 0%, rgb(53, 88, 77) 45%, rgb(81, 172, 157) 100%);
     display: flex;
     justify-content: center;
     align-items: center;
+    font-family: 'Source Code Pro', monospace;
 }
 
 .calculator{
@@ -29,8 +29,12 @@ body{
     height: 50px;
     position: relative;
     top: 0;
-    background-color: aliceblue;
+    background-color: rgb(53, 88, 77);
     border-radius: 5px;
+}
+
+#display{
+    color: aliceblue;
 }
 
 .container1 {
@@ -41,8 +45,8 @@ body{
 
 }
 
-.container1 .btn {
-    width: 47%;
+.container1 .uni {
+    width: 32%;
 }
 
 .container{
@@ -55,7 +59,13 @@ button{
     border : none;
     border-radius: 5px;
     margin-top: 10px;
-    width: 23%
+    width: 23%;
+    background-color: aliceblue;
+    font-family: 'Source Code Pro', monospace;  
+}
+
+.nmb{
+    background-color:rgb(187, 230, 222)
 }
 
 #btn0{
@@ -65,4 +75,9 @@ button{
 p{
     float: right;
     padding-right: 10px;
+}
+
+button:hover{
+    background-blend-mode: multiply;
+    background-color: rgba(0, 0, 0, 0.1);
 }
