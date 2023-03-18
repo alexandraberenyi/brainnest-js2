@@ -10,7 +10,7 @@ let winnerOfRound = document.querySelector("#winnerID");
 let sumPoints = document.querySelector("#currentPoints");
 let computerObject = document.querySelector("#computerObject");
 let gameDisplay = document.querySelector("#endOfGame");
-let gameWinnerAnnounce = document.querySelector("#AnnWinner");
+let gameWinnerAnnounce = document.querySelector("#annWinner");
 
 let computerPoints = 0;
 let playerPoints = 0;
