@@ -5,19 +5,18 @@ let operatorDivide = (input1, input2) => input1 / input2;
 
 let operate = (operator, input1, input2) => operator(input1, input2);
 
-let displayValue = 0;
-let displayNumbers = new Array;
-let displayOperators = new Array;
-var newNumber = true;
-
 let displayTable = document.querySelector("#display")
-
 const numberBtns = document.querySelectorAll(".nmb");
 const operatorBtns = document.querySelectorAll(".opt");
 const equalBtn = document.querySelector("#equal");
 const clearBtn = document.querySelector("#AC");
 const floatBtn = document.querySelector("#btnflt");
 const backBtn = document.querySelector("#backSpace");
+
+let displayValue = 0;
+let displayNumbers = new Array;
+let displayOperators = new Array;
+var newNumber = true;
 
 numberBtns.forEach((button) => {
 	button.addEventListener('click' , () => {
@@ -75,6 +74,19 @@ clearBtn.addEventListener('click', () => {
 	displayOperators = [];
 });
 
+function displayCalculationResult(operatorInput){
+	if(displayNumbers.includes(0) && operatorInput.id === "btnDivide") {
+		displayTable.textContent = 'Error!';
+		displayNumbers = [];
+		displayOperators = [];
+	} else {
+		let usedOperator = switchOperate(operatorInput)
+		displayTable.textContent = operate(usedOperator, displayNumbers[0], displayNumbers[1]);
+		displayNumbers = [];
+		displayNumbers.push(Number(displayTable.textContent));
+	}
+}
+
 function switchOperate (button) {
 	let convertOpt;
 	switch (button.id){
@@ -91,17 +103,4 @@ function switchOperate (button) {
 			convertOpt = operatorDivide;
 	}
 	return convertOpt;
-}
-
-function displayCalculationResult(operatorInput){
-	if(displayNumbers.includes(0) && operatorInput.id === "btnDivide") {
-		displayTable.textContent = 'Error!';
-		displayNumbers = [];
-		displayOperators = [];
-	} else {
-		let usedOperator = switchOperate(operatorInput)
-		displayTable.textContent = operate(usedOperator, displayNumbers[0], displayNumbers[1]);
-		displayNumbers = [];
-		displayNumbers.push(Number(displayTable.textContent));
-	}
 }

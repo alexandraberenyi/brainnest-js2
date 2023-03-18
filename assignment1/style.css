@@ -68,3 +68,7 @@ button{
   font-style: italic;
 }
 
+#endOfGame {
+  display: none;
+  flex-direction: column;
+}
