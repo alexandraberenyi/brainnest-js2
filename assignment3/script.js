@@ -5,7 +5,7 @@ let operatorDivide = (input1, input2) => input1 / input2;
 
 let operate = (operator, input1, input2) => operator(input1, input2);
 
-let displayTable = document.querySelector("#display")
+let displayTable = document.querySelector("#display");
 const numberBtns = document.querySelectorAll(".nmb");
 const operatorBtns = document.querySelectorAll(".opt");
 const equalBtn = document.querySelector("#equal");
@@ -35,11 +35,6 @@ floatBtn.addEventListener('click', () => {
 		displayTable.textContent += displayValue;
 	}
 });
-
-function eventBackSpace(){
-	let lastCharRemoved = displayTable.textContent.substring(0,displayTable.textContent.length-1);
-	displayTable.textContent = lastCharRemoved;
-}
 
 backBtn.addEventListener('click', () => {
 	let lastCharRemoved = displayTable.textContent.substring(0,displayTable.textContent.length-1);
@@ -80,7 +75,7 @@ function displayCalculationResult(operatorInput){
 		displayNumbers = [];
 		displayOperators = [];
 	} else {
-		let usedOperator = switchOperate(operatorInput)
+		let usedOperator = switchOperate(operatorInput);
 		displayTable.textContent = operate(usedOperator, displayNumbers[0], displayNumbers[1]);
 		displayNumbers = [];
 		displayNumbers.push(Number(displayTable.textContent));

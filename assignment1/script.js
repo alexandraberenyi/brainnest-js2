@@ -62,7 +62,7 @@ function endGame() {
   }
 }
 
-const newGameBtn = document.querySelector("#newGame")
+const newGameBtn = document.querySelector("#newGame");
 newGameBtn.addEventListener("click", () => {
   computerPoints = 0;
   playerPoints = 0;
