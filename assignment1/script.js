@@ -16,8 +16,6 @@ let computerPoints = 0;
 let playerPoints = 0;
 
 function playRound(choosenObject){
-
-
   let playerSelection = choosenObject;
   let computerSelection = computerPlay();
 
