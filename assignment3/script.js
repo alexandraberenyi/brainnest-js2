@@ -76,7 +76,8 @@ function displayCalculationResult(operatorInput){
 		displayOperators = [];
 	} else {
 		let usedOperator = switchOperate(operatorInput);
-		displayTable.textContent = operate(usedOperator, displayNumbers[0], displayNumbers[1]);
+		let result = operate(usedOperator, displayNumbers[0], displayNumbers[1]);
+		displayTable.textContent = Math.round(result *100) / 100;
 		displayNumbers = [];
 		displayNumbers.push(Number(displayTable.textContent));
 	}
